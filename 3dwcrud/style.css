@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
+
+:root {
+    --fundo:     #1a0b2e;
+    --fundo-2:   #221040;
+    --cartao:    #2d1650;
+    --cartao-2:  #3b1f69;
+    --borda:     #a78bfa;
+    --roxo:      #8b5cf6;
+    --roxo-esc:  #5b21b6;
+    --roxo-max:  #2e1065;
+    --lilas:     #ddd6fe;
+    --neon:      #e879f9;
+    --pixel:     'Press Start 2P', 'Courier New', monospace;
+    --texto:     'VT323', 'Courier New', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    border-radius: 0;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px 60px;
+    font-family: var(--texto);
+    font-size: 1.4rem;
+    color: var(--lilas);
+    background-color: var(--fundo);
+    /* grade de pixels no fundo */
+    background-image:
+        linear-gradient(var(--fundo-2) 2px, transparent 2px),
+        linear-gradient(90deg, var(--fundo-2) 2px, transparent 2px);
+    background-size: 32px 32px;
+}
+
+/* Título */
+h1 {
+    max-width: 760px;
+    margin: 0 auto 40px;
+    padding: 24px 16px;
+    font-family: var(--pixel);
+    font-size: 1.3rem;
+    line-height: 1.6;
+    text-align: center;
+    color: #fff;
+    text-shadow: 4px 4px 0 var(--roxo-max);
+    background: var(--roxo);
+    box-shadow:
+        0 -4px 0 0 var(--borda),
+        0 4px 0 0 var(--borda),
+        -4px 0 0 0 var(--borda),
+        4px 0 0 0 var(--borda),
+        0 12px 0 0 var(--roxo-max);
+}
+
+h2 {
+    margin: 0 0 20px;
+    font-family: var(--pixel);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: var(--neon);
+    text-shadow: 2px 2px 0 var(--roxo-max);
+}
+
+h2::before {
+    content: "▶ ";
+}
+
+/* Cartões (cantos "quebrados" estilo 8 bits) */
+.cadastro-usuario,
+.alterar-usuario,
+.excluir-usuario,
+.lista-usuarios {
+    max-width: 760px;
+    margin: 0 auto 36px;
+    padding: 24px;
+    background: var(--cartao);
+    box-shadow:
+        0 -4px 0 0 var(--borda),
+        0 4px 0 0 var(--borda),
+        -4px 0 0 0 var(--borda),
+        4px 0 0 0 var(--borda),
+        0 12px 0 0 var(--roxo-max);
+}
+
+/* Formulários */
+form div {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-family: var(--pixel);
+    font-size: 0.65rem;
+    line-height: 1.5;
+    color: var(--lilas);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--texto);
+    font-size: 1.5rem;
+    color: #fff;
+    background: var(--fundo);
+    border: 4px solid var(--roxo-esc);
+    outline: none;
+}
+
+input::placeholder {
+    color: #8e78c2;
+}
+
+input:focus {
+    border-color: var(--neon);
+    background: #12061f;
+}
+
+/* Botões (efeito de apertar) */
+button {
+    padding: 14px 22px;
+    font-family: var(--pixel);
+    font-size: 0.7rem;
+    color: #fff;
+    background: var(--roxo);
+    border: 4px solid var(--roxo-max);
+    box-shadow: 0 6px 0 0 var(--roxo-max);
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--neon);
+    color: var(--roxo-max);
+}
+
+button:active {
+    transform: translateY(6px);
+    box-shadow: none;
+}
+
+.excluir-usuario button {
+    background: var(--roxo-esc);
+    border-color: #12061f;
+    box-shadow: 0 6px 0 0 #12061f;
+}
+
+.excluir-usuario button:hover {
+    background: var(--neon);
+}
+
+.excluir-usuario button:active {
+    box-shadow: none;
+}
+
+hr {
+    display: none;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 4px solid var(--roxo-esc);
+}
+
+table[border] {
+    border: 4px solid var(--roxo-esc);
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    font-family: var(--pixel);
+    font-size: 0.65rem;
+    color: #fff;
+    background: var(--roxo-esc);
+    border: 0;
+}
+
+td {
+    padding: 8px 12px;
+    font-size: 1.5rem;
+    border: 0;
+    border-bottom: 2px solid var(--cartao-2);
+}
+
+tbody tr:nth-child(even) {
+    background: var(--cartao-2);
+}
+
+tbody tr:hover {
+    background: var(--roxo-esc);
+    color: #fff;
+}
+
+.lista-usuarios p {
+    margin: 0;
+    color: var(--neon);
+}
+
+/* Telas pequenas */
+@media (max-width: 520px) {
+    h1 { font-size: 0.9rem; }
+    body { font-size: 1.2rem; }
+}
