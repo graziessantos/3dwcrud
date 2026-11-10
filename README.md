@@ -76,12 +76,6 @@ $pass = '';
 
 Depois de cada ação, o controle redireciona para o `index.php` com uma mensagem (`?MSG=...`), exibida em um `alert`.
 
-## Problemas comuns
-
-- **`Access denied for user 'root'@'localhost'`:** o PHP está conectando no MySQL errado. Confira a porta no `Conexao.php`.
-- **`404 Not Found` ao enviar um formulário:** confira se o `action` aponta para `/3dwcrud/Controle/ControleUsuario.php`.
-- **`Class "..." not found`:** a classe do arquivo `ClassUsuarioDAO.php` se chama `UsuariosDAO`. Use esse nome ao instanciá-la.
-- **Fonte pixelada não aparece:** as fontes vêm do Google Fonts e precisam de internet. Aperte `Ctrl+F5` para limpar o cache.
 
 ## Observações
 
